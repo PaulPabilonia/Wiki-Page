@@ -1,0 +1,22 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Edit Page
+{% endblock %}
+
+{% block body %}
+
+    <form action="{% url 'saveNewPage' %}" method="POST">
+    	{% csrf_token %}
+    	<div class="form-group">
+    		<label class="form-titles">Title:</label>
+    		<input type="text" name="title", value="{{entryTitle}}">
+    	</div>
+		
+		<div class="form-group">
+			<label class="form-titles">Page content: (Markup Language Format)</label>
+        	<textarea class="form-control" name="content" rows="8">{{entry}}</textarea>
+		</div>
+			<button type="submit">Save Page</button>
+	</form>
+{% endblock %}

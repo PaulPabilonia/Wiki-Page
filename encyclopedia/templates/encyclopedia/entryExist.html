@@ -1,0 +1,15 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{entryTitle}}
+{% endblock %}
+
+{% block body %}
+    <h1>{{entryTitle}} is already exist!</h1>
+    <div>
+        {{ entry|safe }}
+    </div>
+    <div>
+        <a href="{% url 'newPage' %}">Go Back</a>
+    </div>
+{% endblock %}
